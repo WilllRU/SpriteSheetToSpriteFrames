@@ -1,0 +1,160 @@
+[gd_scene load_steps=2 format=3 uid="uid://cw8tf6acecoh5"]
+
+[ext_resource type="Script" uid="uid://umpvatpr5ac1" path="res://addons/spritesheetconverter/spritesheets_to_spriteframes.gd" id="1_u6q3o"]
+
+[node name="SpriteSheetConverter" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_u6q3o")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+custom_minimum_size = Vector2(60, 50)
+layout_mode = 2
+text = "Convert any SpriteTileSheet exported from \"Aseprite\" with the JSON Data into a \"SpriteFrames\" Resource."
+autowrap_mode = 2
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="SpriteSheet" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/SpriteSheet"]
+layout_mode = 2
+text = "SpriteSheet Path"
+
+[node name="LineEdit" type="LineEdit" parent="VBoxContainer/SpriteSheet"]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "res://Images/placholder.png"
+
+[node name="JsonData" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/JsonData"]
+layout_mode = 2
+text = "Data Path"
+
+[node name="LineEdit" type="LineEdit" parent="VBoxContainer/JsonData"]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "res://Images/placholder.json"
+
+[node name="HSeparator2" type="HSeparator" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="TabContainer" type="TabContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+current_tab = 0
+
+[node name="Create" type="VBoxContainer" parent="VBoxContainer/TabContainer"]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="Label" type="Label" parent="VBoxContainer/TabContainer/Create"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+text = "Use this tab to create a SpriteFrames Resource."
+autowrap_mode = 2
+
+[node name="ExportPath" type="HBoxContainer" parent="VBoxContainer/TabContainer/Create"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/TabContainer/Create/ExportPath"]
+layout_mode = 2
+text = "Export Path"
+
+[node name="LineEdit" type="LineEdit" parent="VBoxContainer/TabContainer/Create/ExportPath"]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "res://export/"
+
+[node name="ExportName" type="HBoxContainer" parent="VBoxContainer/TabContainer/Create"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/TabContainer/Create/ExportName"]
+layout_mode = 2
+text = "Export Name"
+
+[node name="LineEdit" type="LineEdit" parent="VBoxContainer/TabContainer/Create/ExportName"]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Placeholder (Names the file the same as the image)"
+
+[node name="Append" type="VBoxContainer" parent="VBoxContainer/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="Label2" type="Label" parent="VBoxContainer/TabContainer/Append"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+text = "Use this tab to append animations to an existing SpriteFrames Resource."
+autowrap_mode = 2
+
+[node name="ResourcePath" type="HBoxContainer" parent="VBoxContainer/TabContainer/Append"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/TabContainer/Append/ResourcePath"]
+layout_mode = 2
+text = "Append to:"
+
+[node name="LineEdit" type="LineEdit" parent="VBoxContainer/TabContainer/Append/ResourcePath"]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "res://resource/placeholder.tres"
+
+[node name="CheckBox" type="CheckBox" parent="VBoxContainer/TabContainer/Append"]
+layout_mode = 2
+tooltip_text = "Overwrites the previous tagged animations with new ones gathered from the data"
+button_pressed = true
+text = "Overwrite Animations"
+
+[node name="HSeparator3" type="HSeparator" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="ExportOptions" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="VBoxContainer/ExportOptions"]
+layout_mode = 2
+tooltip_text = "Overwrites FPS of ALL tagged animations that are created/added to the specified FPS"
+text = "Overwrite FPS"
+
+[node name="SpinBox" type="SpinBox" parent="VBoxContainer/ExportOptions"]
+layout_mode = 2
+min_value = 1.0
+value = 10.0
+rounded = true
+editable = false
+prefix = "FPS"
+
+[node name="ConvertButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+disabled = true
+text = "Convert"
+
+[node name="AppendButton" type="Button" parent="VBoxContainer"]
+visible = false
+layout_mode = 2
+disabled = true
+text = "Append
+"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+bbcode_enabled = true

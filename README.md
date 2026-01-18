@@ -7,12 +7,16 @@ A Godot plugin to streamline the conversion of a sprite sheet with animations fr
 
 ![alt text](/screenshots/AsepriteExport1.png)
 
-2. In the output options, "JSON Data" must be enabled and "Tags" must be enabled (The "Tags" option and everything else should be set by default, without having to change any options when enabling "JSON Data").
+2. In the "Sprite" tab, make sure to enable "Split Tags". This is important for the plugin to know what it should look for.
+
+![alt text](/screenshots/AsepriteExport3.png)
+
+3. In the output options, "JSON Data" must be enabled and "Tags" must be enabled (The "Tags" option and everything else should be set by default, without having to change any options when enabling "JSON Data").
 
 ![alt text](/screenshots/AsepriteExport2.png)
 
-3. Set the JSON and sprite sheet into your project.
-4. After enabling the plugin, copy the path of your sprite sheet and JSON and place them into their appropriate text fields.
+4. Set the JSON and sprite sheet into your project.
+5. After enabling the plugin, copy the path of your sprite sheet and JSON and place them into their appropriate text fields.
 
 ![alt text](/screenshots/Plugin1.png)
 

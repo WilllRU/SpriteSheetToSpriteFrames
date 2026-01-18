@@ -150,6 +150,7 @@ func create_sprite_frames(data : Dictionary, sprite_sheet : Texture) -> SpriteFr
 		if string_index > 0:
 			tag_index = cur_tag_name.right(string_index).to_int()
 			cur_tag_name = cur_tag_name.left(-string_index)
+		cur_tag_name = cur_tag_name.strip_edges()
 		cur_tag_name = cur_tag_name.to_upper()
 		
 		var frame_dict : Dictionary = frames_data.get(k, {})
